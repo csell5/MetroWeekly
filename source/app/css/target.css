@@ -1,0 +1,52 @@
+﻿
+html {
+	display: -ms-grid;
+	-ms-grid-columns: 1fr;
+	-ms-grid-rows: 1fr;
+}
+
+#rootGrid {
+	-ms-grid-column: 1;
+	-ms-grid-row: 1;
+	
+	display: -ms-grid; 
+	-ms-grid-columns: 1fr;
+	-ms-grid-rows: 100px 1fr 100px;
+
+	margin-left: 25px;
+}
+
+#header {
+	-ms-grid-column: 1;
+	-ms-grid-row: 1;
+	margin-top: 25px;
+}
+
+#content {
+	
+	-ms-grid-column: 1;
+	-ms-grid-row: 2;
+	
+	display: -ms-grid;
+	-ms-grid-columns: 1fr;
+	-ms-grid-rows: 1fr 1fr 1fr;
+	
+}
+
+#contentValue {
+	-ms-grid-row: 1;
+}
+
+#submitArticle {
+	-ms-grid-row: 2;
+}
+
+#quickLinkArea {
+	-ms-grid-row: 3;
+}
+	
+#footer {
+	-ms-grid-row: 3;
+	margin-top: 25px;
+}
+	

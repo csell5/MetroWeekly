@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Metro Weekly</title>
+
+    <!-- WinJS references -->
+    <link rel="stylesheet" href="//Microsoft.WinJS.1.0/css/ui-light.css" />
+    <link rel="stylesheet" href="/css/target.css" />
+    
+	<script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <script src="/js/target.js"></script>
+</head>
+
+<body role="application">
+    <div id="rootGrid">
+        <div id="header" role="contentinfo" data-win-control="WinJS.UI.HtmlControl" data-win-options="{uri: '/html/header.html'}"></div>
+       
+	    <div id="content">
+
+            <!--
+            <strong>Title: </strong><span id="title">(No title)</span>
+            <br />
+            <strong>Description: </strong><span id="description">(No description)</span>
+            <br />
+            <div id="thumbnailArea" class="hidden"><strong>Thumbnail: </strong><br /><img class="thumbnail" alt="(Thumbnail)" id="thumbnailImage" /><br /></div>
+            -->
+            <div id="contentValue" >
+                <div id="htmlContentArea" class="hidden"><strong>HTML: </strong><br /><iframe id="htmlContent" style="width:600px; height:auto; display:none" ></iframe></div>
+            </div>
+
+            <div id="submitArticle">
+                <span>Submit to Metro Weekly:</span>
+                <button id="submitArticle">Submit Article</button>
+            </div>
+
+            <div id="quickLinkArea">
+                <input type="checkbox" id="addQuickLink" value="addQuickLink" /> Add a QuickLink (optional)
+                <br />
+                <div id="quickLinkFields" class="hidden">
+                    <div id="quickLinkError" class="hidden"></div>
+                    QuickLink Id: <input type="text" id="quickLinkId" value="ABC123"/><br />
+                    Your Name: <input type="text" id="quickLinkTitle" value="Email John Smith"/><br />
+                    Your Weebsite: <input type="text" id="quickLinkTitle" value="Email John Smith"/><br />
+                    Icon: <img alt="QuickLink icon" src="images/user.png" id="quickLinkIcon" />
+                </div>
+            </div>
+
+        </div>
+          
+        <div id="footer" data-win-control="WinJS.UI.HtmlControl" data-win-options="{uri: '/html/footer.html'}"></div>
+    </div>
+</body>
+</html>

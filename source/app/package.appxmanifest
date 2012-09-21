@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="ebb0d4a4-f505-4f92-b597-82df1519153d" Version="1.0.0.0" Publisher="CN=csell" />
+  <Properties>
+    <DisplayName>Metro Weekly</DisplayName>
+    <PublisherDisplayName>csell</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <VisualElements DisplayName="Metro Weekly" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="A free weekly email round up of anything and everything related to Microsoft’s Metro. This means Windows Phone, Windows 8, Xbox, WinRT, design and whatever else we dig up." ForegroundText="light" BackgroundColor="#464646">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="images\splashscreen.png" />
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.shareTarget" StartPage="target.html">
+          <ShareTarget>
+            <DataFormat>uri</DataFormat>
+          </ShareTarget>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
