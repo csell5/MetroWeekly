@@ -29,11 +29,19 @@
             -->
             <div id="contentValue" >
                 <div id="htmlContentArea" class="hidden"><strong>HTML: </strong><br /><iframe id="htmlContent" style="width:600px; height:auto; display:none" ></iframe></div>
+                <p id="submitUrl"></p>
             </div>
 
             <div id="submitArticle">
                 <span>Submit to Metro Weekly:</span>
-                <button id="submitArticle">Submit Article</button>
+                <button id="submitArticleBtn">Submit Article</button>
+                
+                <label id="submitProgress">
+                    <progress class="win-ring withText"></progress>Processing</label>
+                <p>
+                    <label id="submitArticleResult"></label>
+                </p>
+                
             </div>
 
             <div id="quickLinkArea">

@@ -49,4 +49,7 @@ html {
 	-ms-grid-row: 3;
 	margin-top: 25px;
 }
-	
+
+#submitProgress {
+    visibility: hidden;
+}

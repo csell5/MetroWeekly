@@ -7,6 +7,8 @@
     // Variable to store the visibility of the Extended Sharing section
     var extendedSharingCollapsed = true;
 
+    var sharedUri = null;
+
     /// <summary>
     /// Helper function to display received sharing content
     /// </summary>
@@ -54,8 +56,7 @@
     }
 
     /// <summary>
-    /// Handler executed when ready to share; handling the share operation should be performed
-    /// outside the activation handler
+    /// Handler executed when ready to share; handling the share operation should be performed outside the activation handler
     /// </summary>
     function shareReady(eventArgs) {
         //document.getElementById("title").innerText = shareOperation.data.properties.title;
@@ -66,28 +67,13 @@
             document.getElementById("quickLinkArea").className = "hidden";
         }
 
-        /*
-        // Display a thumbnail if available
-        if (shareOperation.data.properties.thumbnail) {
-            shareOperation.data.properties.thumbnail.openReadAsync().done(function (thumbnailStream) {
-                document.getElementById("thumbnailImage").src = URL.createObjectURL(thumbnailStream, { oneTimeOnly: true });
-                document.getElementById("thumbnailArea").className = "unhidden";
-            });
-        }
-
-        // Display the data received based on data type
-        if (shareOperation.data.contains(Windows.ApplicationModel.DataTransfer.StandardDataFormats.text)) {
-            shareOperation.data.getTextAsync().done(function (text) {
-                displayContent("Text: ", text, false);
-            });
-        }
-
         if (shareOperation.data.contains(Windows.ApplicationModel.DataTransfer.StandardDataFormats.uri)) {
             shareOperation.data.getUriAsync().done(function (uri) {
-                displayContent("Uri: ", uri.rawUri, false);
+                sharedUri = uri.rawUri;
+                document.getElementById("submitUrl").textContent = sharedUri;
             });
         }
-        */
+        
         if (shareOperation.data.contains(Windows.ApplicationModel.DataTransfer.StandardDataFormats.html)) {
             shareOperation.data.getHtmlFormatAsync().done(function (htmlFormat) {
                 document.getElementById("htmlContentArea").className = "unhidden";
@@ -117,6 +103,41 @@
                 }
             });
         }
+
+
+        // post the stuff 
+        document.getElementById("submitArticleBtn").addEventListener("click", postArticle, false);
+    }
+
+    function postArticle() {
+
+        var postData = {
+            ArticleUrl: sharedUri,
+            UserName: "awesome",
+            UserWebSite: "http://myWebSite.com",
+        };
+        
+        WinJS.xhr({
+            type: "POST",
+            url: "http://metro-weekly.com/api/submission",
+            headers: { "Content-Type": "application/json; charset=utf-8" },
+            data: JSON.stringify(postData)
+        }).then(
+            function () {
+                //todo we should write something to the screen on success
+                document.getElementById("submitProgress").style.visibility = "hidden";
+                document.getElementById("submitArticleResult").textContent = "Submitted - Thank You";
+            },
+            function (e) {
+                document.getElementById("submitArticleBtn").style.visibility = "visible";
+                document.getElementById("submitArticleResult").textContent = "Error...";
+            },
+            function progress(request) {
+                document.getElementById("submitProgress").style.visibility = "visible";
+                document.getElementById("submitArticleBtn").style.visibility = "hidden";
+            }
+        );
+
     }
 
     /// <summary>
@@ -207,23 +228,6 @@
     }
 
     /// <summary>
-    /// Expand/collapse the Extended Sharing div
-    /// </summary>
-    function expandoClick() {
-        if (extendedSharingCollapsed) {
-            document.getElementById("extendedSharing").className = "unhidden";
-            // Set expando glyph to up arrow
-            document.getElementById("expandoGlyph").innerHTML = "&#57360;";
-            extendedSharingCollapsed = false;
-        } else {
-            document.getElementById("extendedSharing").className = "hidden";
-            // Set expando glyph to down arrow
-            document.getElementById("expandoGlyph").innerHTML = "&#57361;";
-            extendedSharingCollapsed = true;
-        }
-    }
-
-    /// <summary>
     /// Expand/collapse the QuickLink fields
     /// </summary>
     function addQuickLinkChanged() {
@@ -238,13 +242,13 @@
     // Initialize the activation handler
     WinJS.Application.addEventListener("activated", activatedHandler, false);
     WinJS.Application.addEventListener("shareready", shareReady, false);
+
     WinJS.Application.start();
 
     function initialize() {
         document.getElementById("addQuickLink").addEventListener("change", /*@static_cast(EventListener)*/addQuickLinkChanged, false);
-        document.getElementById("addQuickLink").addEventListener("change", /*@static_cast(EventListener)*/addQuickLinkChanged, false);
-        
     }
 
     document.addEventListener("DOMContentLoaded", initialize, false);
+
 })();
