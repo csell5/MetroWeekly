@@ -8,15 +8,21 @@
     var app = WinJS.Application;
     var activation = Windows.ApplicationModel.Activation;
     var nav = WinJS.Navigation;
+    var appdata = Windows.Storage.ApplicationData;
 
     app.onsettings = function (e) {
         e.detail.applicationcommands = {
-
+            "about": {
+                href: "/pages/about/about.html",
+                title: "About"
+            },
             "userSettings": {
-                href: "/html/userSettings.html",
-                title: "User Settings"
+                href: "/pages/userSettings/userSettings.html",
+                title: "User Information"
             }
+
         }
+
 
         WinJS.UI.SettingsFlyout.populateSettings(e);
     };

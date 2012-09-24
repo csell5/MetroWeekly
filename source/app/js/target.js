@@ -9,6 +9,9 @@
 
     var sharedUri = null;
 
+    // variable for pulling saved roaming data
+    var appdata = Windows.Storage.ApplicationData;
+
     /// <summary>
     /// Helper function to display received sharing content
     /// </summary>
@@ -33,6 +36,9 @@
             document.getElementById("contentValue").appendChild(document.createTextNode(content));
         }
         document.getElementById("contentValue").appendChild(document.createElement("br"));
+
+        
+
     }
 
     /// <summary>
@@ -111,10 +117,15 @@
 
     function postArticle() {
 
+        var userNameInputBox = document.getElementById("quickLinkName");
+        var userUrlInputBox = document.getElementById("quickLinkWebsite");
+        var userTwitterInputBox = document.getElementById("quickLinkTwitter");
+        var quickLinkIdInputBox = document.getElementById("quickLinkId");
+
         var postData = {
             ArticleUrl: sharedUri,
-            UserName: "awesome",
-            UserWebSite: "http://myWebSite.com",
+            UserName: userNameInputBox,
+            UserWebSite: userUrlInputBox,
         };
         
         WinJS.xhr({
@@ -247,6 +258,25 @@
 
     function initialize() {
         document.getElementById("addQuickLink").addEventListener("change", /*@static_cast(EventListener)*/addQuickLinkChanged, false);
+
+        //retreive data
+        var userName = appdata.current.roamingSettings.values["userName"];
+        if (userName) {
+            var userNameInputBox = document.getElementById("quickLinkName");
+            userNameInputBox.innerText = userName;
+        }
+        var userUrl = appdata.current.roamingSettings.values["userUrl"];
+        if (userUrl) {
+            var userUrlInputBox = document.getElementById("quickLinkWebsite");
+            userUrlInputBox.innerText = userUrl;
+        }
+        var userTwitter = appdata.current.roamingSettings.values["userTwitter"];
+        if (userTwitter) {
+            var userTwitterInputBox = document.getElementById("quickLinkTwitter");
+            userTwitterInputBox.innerText = userTwitter;
+        }
+
+
     }
 
     document.addEventListener("DOMContentLoaded", initialize, false);

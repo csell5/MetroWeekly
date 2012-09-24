@@ -1,4 +1,8 @@
-﻿.SettingsPane {
+﻿.userSettings p {
+    margin-left: 120px;
+}
+
+.SettingsPane {
     margin-top:36px;
     margin-left:48px;
 }

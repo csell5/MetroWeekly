@@ -29,7 +29,7 @@ html {
 	
 	display: -ms-grid;
 	-ms-grid-columns: 1fr;
-	-ms-grid-rows: 1fr 1fr 1fr;
+	-ms-grid-rows: 1fr .5fr 1.5fr;
 	
 }
 
@@ -53,3 +53,27 @@ html {
 #submitProgress {
     visibility: hidden;
 }
+
+#quickLinkIcon {
+    width:75px;
+    height:75px;
+    position:relative;
+    top:-170px;
+    float: left;
+}
+
+#quickLinkId, #quickLinkName, #quickLinkWebsite, #quickLinkTwitter {
+    width:340px;
+    height:32px;
+    position:relative;
+    margin-left:5px;
+    float: left;
+}
+
+.labelTextQL { 
+width:100px;
+height:32px;
+margin-left:100px;
+float: left;
+padding-top:12px;
+} 
