@@ -117,6 +117,11 @@
 
     function postArticle() {
 
+        //Hide the submit button
+        document.getElementById("submitProgress").style.visibility = "visible";
+        document.getElementById("submitArticleBtn").style.visibility = "hidden";
+
+        //Grab the roaming data
         var userNameInputBox = document.getElementById("quickLinkName");
         var userUrlInputBox = document.getElementById("quickLinkWebsite");
         var userTwitterInputBox = document.getElementById("quickLinkTwitter");
@@ -126,6 +131,7 @@
             ArticleUrl: sharedUri,
             UserName: userNameInputBox,
             UserWebSite: userUrlInputBox,
+            twitter: userTwitterInputBox
         };
         
         WinJS.xhr({
@@ -142,10 +148,6 @@
             function (e) {
                 document.getElementById("submitArticleBtn").style.visibility = "visible";
                 document.getElementById("submitArticleResult").textContent = "Error...";
-            },
-            function progress(request) {
-                document.getElementById("submitProgress").style.visibility = "visible";
-                document.getElementById("submitArticleBtn").style.visibility = "hidden";
             }
         );
 
@@ -259,7 +261,7 @@
     function initialize() {
         document.getElementById("addQuickLink").addEventListener("change", /*@static_cast(EventListener)*/addQuickLinkChanged, false);
 
-        //retreive data
+        //retreive roaming and set it to the quick link meta...
         var userName = appdata.current.roamingSettings.values["userName"];
         if (userName) {
             var userNameInputBox = document.getElementById("quickLinkName");
@@ -275,8 +277,6 @@
             var userTwitterInputBox = document.getElementById("quickLinkTwitter");
             userTwitterInputBox.innerText = userTwitter;
         }
-
-
     }
 
     document.addEventListener("DOMContentLoaded", initialize, false);

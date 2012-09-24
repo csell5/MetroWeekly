@@ -11,6 +11,12 @@
         ready: function (element, options) {
             // TODO: Initialize the page here.
 
+            /*
+                        TODO We should think about moving this object out into a real js object that we can use and initalize across all. 
+                        for now I am just going to copy some of it and revisit.  
+                        --@CSELL5
+                    */
+
             //retreive data
             var userName = appdata.current.roamingSettings.values["userName"];
             if (userName) {
