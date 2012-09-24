@@ -16,8 +16,8 @@
   <Applications>
     <Application Id="App" StartPage="default.html">
       <VisualElements DisplayName="Metro Weekly" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="A free weekly email round up of anything and everything related to Microsoft’s Metro. This means Windows Phone, Windows 8, Xbox, WinRT, design and whatever else we dig up." ForegroundText="light" BackgroundColor="#464646">
-        <DefaultTile ShowName="allLogos" />
-        <SplashScreen Image="images\splashscreen.png" />
+        <DefaultTile ShowName="noLogos" WideLogo="images\widelogo.png" />
+        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#282828" />
       </VisualElements>
       <Extensions>
         <Extension Category="windows.shareTarget" StartPage="target.html">
