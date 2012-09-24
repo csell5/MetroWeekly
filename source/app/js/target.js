@@ -129,9 +129,9 @@
 
         var postData = {
             ArticleUrl: sharedUri,
-            UserName: userNameInputBox,
-            UserWebSite: userUrlInputBox,
-            twitter: userTwitterInputBox
+            UserName: userNameInputBox.value,
+            UserWebSite: userUrlInputBox.value,
+            Twitter: userTwitterInputBox.value
         };
         
         WinJS.xhr({
