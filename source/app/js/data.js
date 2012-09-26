@@ -1,13 +1,31 @@
 ﻿(function () {
     "use strict";
 
+    var dataPromises = [];
+    
     var articles = new WinJS.Binding.List();
 
-    function getArticles() {
-        return WinJS.xhr({ url: "http://metro-weekly.com/articles" });
+    var approvedArticlesUrl = "http://metro-weekly.com/articles";
 
+    function getAprovedArticles(url) {
+        return WinJS.xhr({ url: url });
     }
 
+    function foo() {
+        //get all of the approved articles
+        var articles = getAprovedArticles(approvedArticlesUrl);
+
+        //loop through each article getting some data for it
+        articles.forEach(function (article) {
+            //article.dataPromise = article.
+        });
+
+        return WinJS.Promise.Join(dataPromises).then ( function () {
+            return articles;
+        });
+    }
+
+    
 
 
 
