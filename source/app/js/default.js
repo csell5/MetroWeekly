@@ -10,6 +10,13 @@
     var nav = WinJS.Navigation;
     var appdata = Windows.Storage.ApplicationData;
 
+    var notify = Windows.UI.Notifications;
+    var push = Windows.Networking.PushNotifications;
+    var net = Windows.Networking.Connectivity;
+    var wsc = Windows.Security.Cryptography;
+    var popups = Windows.UI.Popups;
+
+
     app.onsettings = function (e) {
         e.detail.applicationcommands = {
             "about": {
@@ -36,6 +43,28 @@
                 // TODO: This application has been reactivated from suspension.
                 // Restore application state here.
             }
+
+            // Clear tiles and badges
+            notify.TileUpdateManager.createTileUpdaterForApplication().clear();
+            notify.BadgeUpdateManager.createBadgeUpdaterForApplication().clear();
+
+            // Register for push notifications
+            var profile = net.NetworkInformation.getInternetConnectionProfile();
+
+            if (profile.getNetworkConnectivityLevel() === net.NetworkConnectivityLevel.internetAccess) {
+                push.PushNotificationChannelManager.createPushNotificationChannelForApplicationAsync().then(function (channel) {
+                    var buffer = wsc.CryptographicBuffer.convertStringToBinary(channel.uri, wsc.BinaryStringEncoding.utf8);
+                    var uri = wsc.CryptographicBuffer.encodeToBase64String(buffer);
+
+                    WinJS.xhr({ url: "http://ContosoRecipes8.cloudapp.net?uri=" + uri + "&type=tile" }).then(function (xhr) {
+                        if (xhr.status < 200 || xhr.status >= 300) {
+                            var dialog = new popups.MessageDialog("Unable to open push notification channel");
+                            dialog.showAsync();
+                        }
+                    });
+                });
+            }
+
 
             if (app.sessionState.history) {
                 nav.history = app.sessionState.history;
