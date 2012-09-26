@@ -1,43 +1,25 @@
 ﻿(function () {
     "use strict";
 
-    var dataPromises = [];
-    
-    var list = new WinJS.Binding.List();
+    var articleList = new WinJS.Binding.List();
 
-    var approvedArticlesUrl = "http://metro-weekly.com/articles";
+    WinJS.xhr({ url: "http://metro-weekly.com/article/getapproved" }).then(function (result) {
+        var articles = JSON.parse(result.response);
+        articles.forEach(function (i) {
+            articleList.push({
+                Twitter: i.twitter,
+                ArticleUrl: i.ArticleUrl
+            });
+        })
+    });
 
-    function getAprovedArticles(url) {
-        return WinJS.xhr({ url: url });
-    }
-
-    function getArticle() {
-    
-    }
-
-    function foo() {
-        //get all of the approved articles
-        var articles = getAprovedArticles(approvedArticlesUrl);
-
-        //loop through each article getting some data for it
-        articles.forEach(function (article) {
-            //article.dataPromise = article.
-        });
-
-        return WinJS.Promise.Join(dataPromises).then ( function () {
-            return articles;
-        });
-    }
-
-    
-    var groupedItems = list.createGrouped(
-        function groupKeySelector(item) { return item.group.key; },
-        function groupDataSelector(item) { return item.group; }
-    );
+    WinJS.Namespace.define("Data", {
+        items: articleList,
+    });
 
 })();
 
-
+/*
 // To BE DELETED...
 
 (function () {
@@ -279,3 +261,4 @@
     });
 })();
 
+*/

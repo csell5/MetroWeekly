@@ -9,7 +9,7 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
             var listView = element.querySelector(".itemslist").winControl;
-            listView.itemDataSource = Data.groups.dataSource;
+            listView.itemDataSource = Data.items.dataSource;
             listView.itemTemplate = element.querySelector(".itemtemplate");
             listView.oniteminvoked = this._itemInvoked.bind(this);
 
