@@ -3,13 +3,12 @@
 
     var articleList = new WinJS.Binding.List();
 
+    
     WinJS.xhr({ url: "http://metro-weekly.com/article/getapproved" }).then(function (result) {
         var articles = JSON.parse(result.response);
+        
         articles.forEach(function (i) {
-            articleList.push({
-                Twitter: i.twitter,
-                ArticleUrl: i.ArticleUrl
-            });
+            articleList.push(i); 
         })
     });
 
