@@ -62,7 +62,7 @@
                     WinJS.xhr({ 
                         type: "POST",
                         headers: { "Content-Type": "application/json; charset=utf-8" },
-                        url: "http://Metro-Weekly.com/api/PushNotifications",
+                        url: "http://metro-weekly.com/api/PushNotifications",
                         data: JSON.stringify(postData)
                     }).then(function (xhr) {
                         if (xhr.status < 200 || xhr.status >= 300) {
