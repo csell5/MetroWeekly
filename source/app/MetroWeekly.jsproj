@@ -48,7 +48,8 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <PackageCertificateKeyFile>Metro-Weekly-App_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>MetroWeekly_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>694B161881513B9FDD097C42C37D1EC0DD0231EC</PackageCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
@@ -68,6 +69,8 @@
     <Content Include="js\default.js" />
     <Content Include="js\navigator.js" />
     <Content Include="js\target.js" />
+    <None Include="Package.StoreAssociation.xml" />
+    <None Include="MetroWeekly_StoreKey.pfx" />
     <Content Include="pages\about\about.css" />
     <Content Include="pages\about\about.html" />
     <Content Include="pages\about\about.js" />

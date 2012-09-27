@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="ebb0d4a4-f505-4f92-b597-82df1519153d" Version="1.0.0.0" Publisher="CN=csell" />
+  <Identity Name="32361ClarkSell.MetroWeekly" Publisher="CN=E52C30A2-E897-42F9-8D37-1F9E26313F35" Version="1.0.0.0" />
   <Properties>
     <DisplayName>Metro Weekly</DisplayName>
-    <PublisherDisplayName>csell</PublisherDisplayName>
+    <PublisherDisplayName>Clark Sell</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="Metro Weekly" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="A free weekly email round up of anything and everything related to Microsoft’s Metro. This means Windows Phone, Windows 8, Xbox, WinRT, design and whatever else we dig up." ForegroundText="light" BackgroundColor="#464646">
+      <VisualElements DisplayName="Metro Weekly" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="A free weekly email round up of anything and everything related to Microsoft’s Metro. This means Windows Phone, Windows 8, Xbox, WinRT, design and whatever else we dig up." ForegroundText="light" BackgroundColor="#464646" ToastCapable="true">
         <DefaultTile ShowName="noLogos" WideLogo="images\widelogo.png" />
         <SplashScreen Image="images\splashscreen.png" BackgroundColor="#FFFFFF" />
       </VisualElements>
@@ -29,6 +29,7 @@
     </Application>
   </Applications>
   <Capabilities>
+    <Capability Name="privateNetworkClientServer" />
     <Capability Name="internetClient" />
   </Capabilities>
 </Package>

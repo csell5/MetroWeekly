@@ -53,10 +53,18 @@
 
             if (profile.getNetworkConnectivityLevel() === net.NetworkConnectivityLevel.internetAccess) {
                 push.PushNotificationChannelManager.createPushNotificationChannelForApplicationAsync().then(function (channel) {
-                    var buffer = wsc.CryptographicBuffer.convertStringToBinary(channel.uri, wsc.BinaryStringEncoding.utf8);
-                    var uri = wsc.CryptographicBuffer.encodeToBase64String(buffer);
 
-                    WinJS.xhr({ url: "http://ContosoRecipes8.cloudapp.net?uri=" + uri + "&type=tile" }).then(function (xhr) {
+                    //var buffer = wsc.CryptographicBuffer.convertStringToBinary(channel.uri, wsc.BinaryStringEncoding.utf8);
+                    //var uri = wsc.CryptographicBuffer.encodeToBase64String(buffer);
+
+                    var postData = { uri: channel.uri};
+
+                    WinJS.xhr({ 
+                        type: "POST",
+                        headers: { "Content-Type": "application/json; charset=utf-8" },
+                        url: "http://metro-weekly.com/api/PushNotifications",
+                        data: JSON.stringify(postData)
+                    }).then(function (xhr) {
                         if (xhr.status < 200 || xhr.status >= 300) {
                             var dialog = new popups.MessageDialog("Unable to open push notification channel");
                             dialog.showAsync();
