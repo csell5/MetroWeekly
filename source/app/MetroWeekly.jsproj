@@ -59,6 +59,7 @@
     <Content Include="css\target.css" />
     <Content Include="html\footer.html" />
     <Content Include="html\header.html" />
+    <Content Include="images\badgelogo.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\smalllogo.png" />
     <Content Include="images\splashscreen.png" />
