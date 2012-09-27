@@ -61,6 +61,7 @@
     <Content Include="html\header.html" />
     <Content Include="images\badgelogo.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\metroweeklylogo.png" />
     <Content Include="images\smalllogo.png" />
     <Content Include="images\splashscreen.png" />
     <Content Include="images\storelogo.png" />

@@ -259,7 +259,7 @@
     WinJS.Application.start();
 
     function initialize() {
-        document.getElementById("addQuickLink").addEventListener("change", /*@static_cast(EventListener)*/addQuickLinkChanged, false);
+        //document.getElementById("addQuickLink").addEventListener("change", /*@static_cast(EventListener)*/addQuickLinkChanged, false);
 
         //retreive roaming and set it to the quick link meta...
         var userName = appdata.current.roamingSettings.values["userName"];
