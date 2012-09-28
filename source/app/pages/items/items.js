@@ -11,7 +11,6 @@
             var listView = element.querySelector(".itemslist").winControl;
             listView.itemDataSource = Data.groupedItemsList.dataSource;
             listView.groupDataSource = Data.groupedItemsList.groups.dataSource;
-
             listView.itemTemplate = element.querySelector(".itemtemplate");
             listView.oniteminvoked = this._itemInvoked.bind(this);
 
