@@ -276,6 +276,14 @@
         if (userTwitter) {
             var userTwitterInputBox = document.getElementById("quickLinkTwitter");
             userTwitterInputBox.innerText = userTwitter;
+            var userImage = document.getElementById("quickLinkIcon");
+            userImage.src = "https://api.twitter.com/1/users/profile_image?screen_name=" + userTwitter + "&size=bigger";
+        }
+        else {
+            var userTwitterInputBox = document.getElementById("quickLinkTwitter");
+            userTwitterInputBox.innerText = "metro_weekly";
+            var userImage = document.getElementById("quickLinkIcon");
+            userImage.src = "https://api.twitter.com/1/users/profile_image?screen_name=metro_weekly&size=bigger";
         }
     }
 

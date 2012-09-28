@@ -45,8 +45,8 @@
             }
 
             // Clear tiles and badges
-            //notify.TileUpdateManager.createTileUpdaterForApplication().clear();
-            //notify.BadgeUpdateManager.createBadgeUpdaterForApplication().clear();
+            notify.TileUpdateManager.createTileUpdaterForApplication().clear();
+            notify.BadgeUpdateManager.createBadgeUpdaterForApplication().clear();
 
             // Register for push notifications
             var profile = net.NetworkInformation.getInternetConnectionProfile();

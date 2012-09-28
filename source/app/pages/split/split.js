@@ -49,6 +49,18 @@
                 // appear in the ListView.
                 listView.selection.set(Math.max(this._itemSelectionIndex, 0));
             }
+
+            // Handle click events from the Photo command
+            document.getElementById("photo").addEventListener("click", function (e) {
+                dtm.showShareUI();
+            });
+
+            // Handle click events from the Video command
+            document.getElementById("video").addEventListener("click", function (e) {
+                dtm.showShareUI();
+            });
+
+
         },
 
         unload: function () {
