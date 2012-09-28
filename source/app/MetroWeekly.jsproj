@@ -69,6 +69,7 @@
     <Content Include="images\widelogo.png" />
     <Content Include="js\data.js" />
     <Content Include="js\default.js" />
+    <Content Include="js\moment.min.js" />
     <Content Include="js\navigator.js" />
     <Content Include="js\target.js" />
     <None Include="Package.StoreAssociation.xml" />

@@ -15,10 +15,22 @@
     <script src="/pages/items/items.js"></script>
 </head>
 <body>
+
+    <div id="headerTemplate" data-win-control="WinJS.Binding.Template" 
+        style="display: none">
+        <div class="simpleHeaderItem">
+            <h1 data-win-bind="innerText: title"></h1>
+        </div>
+    </div>
+
     <!-- This template is used to display each item in the ListView declared below. -->
     <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
         <div class="item">
+            
             <img class="item-image" src="#" data-win-bind="src: backgroundImage; alt: title" />
+
+            <!--<div class="item-image">ASDFASFDASDFAF</div>-->
+
             <div class="item-overlay">
                 <h4 class="item-title" data-win-bind="textContent: ArticleUrl"></h4>
                 <h6 class="item-subtitle win-type-ellipsis" data-win-bind="textContent: Twitter"></h6>
@@ -35,7 +47,19 @@
             </h1>
         </header>
         <section aria-label="Main content" role="main">
-            <div class="itemslist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none' }"></div>
+            
+                <div 
+                    class="itemslist win-selectionstylefilled"
+                    id="groupedListView"
+                        data-win-control="WinJS.UI.ListView" 
+                        data-win-options="{itemTemplate: select('#itemtemplate'),
+                                            selectionMode: 'none', 
+                                            groupHeaderTemplate: select('#headerTemplate'),
+                                            layout: {type: WinJS.UI.GridLayout}}">
+                </div>
+
+            
+            <!-- <div class="itemslist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none' }"></div> -->
         </section>
     </div>
 </body>
