@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="32361ClarkSell.MetroWeekly" Publisher="CN=E52C30A2-E897-42F9-8D37-1F9E26313F35" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>Metro Weekly</DisplayName>
+    <PublisherDisplayName>Clark Sell</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <VisualElements DisplayName="Metro Weekly" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="A free weekly email round up of anything and everything related to Microsoft’s Metro. This means Windows Phone, Windows 8, Xbox, WinRT, design and whatever else we dig up." ForegroundText="light" BackgroundColor="#464646" ToastCapable="true">
+        <DefaultTile ShowName="noLogos" WideLogo="images\widelogo.png" />
+        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#FFFFFF" />
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.shareTarget" StartPage="target.html">
+          <ShareTarget>
+            <DataFormat>uri</DataFormat>
+          </ShareTarget>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="privateNetworkClientServer" />
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
