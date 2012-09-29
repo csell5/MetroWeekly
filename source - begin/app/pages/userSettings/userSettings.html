@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>userSettings</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="userSettings.css" rel="stylesheet" />
+    <script src="userSettings.js"></script>
+</head>
+<body>
+    <div id="userSettings" data-win-control="WinJS.UI.SettingsFlyout" data-win-options="{width: 'narrow'}">
+        <div class="SettingsPane">
+            <div class="win-label">
+                <button onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton">
+                </button>
+                <span class="SettingsTitle">User Information</span>
+            </div>
+            <article class="SettingsContent">
+               <!-- <div id="remember" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{ title: 'Remember where I was' }" />-->
+                <form>
+			        <label for="orderName">Your name:</label><br />
+			        <input id="userName" type="text" name="userName" placeholder="John Doe" required/><br />
+		            <br />
+			        <label for="orderName">Your blog or website:</label><br />
+			        <input id="userUrl" type="url" name="userUrl" placeholder="http://metro-weekly.com" required/><br />
+                    <br />
+			        <label for="orderName">Your twitter handle:</label><br />
+			        <input id="userTwitter" type="text" name="userTwitter" placeholder="@metro-weekly" required/><br />
+                    <br />
+                </form>
+            </article>
+        </div>
+    </div>
+</body>
+</html>

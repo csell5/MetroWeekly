@@ -1,72 +1,80 @@
-﻿section[role=main] {
-    -ms-grid-columns: 40px 1fr 40px;
-    -ms-grid-rows: 197px 40px 1fr;
-    display: -ms-grid;
-    width: 100%;
+﻿
+html {
+	display: -ms-grid;
+	-ms-grid-columns: 1fr;
+	-ms-grid-rows: 1fr;
 }
 
-    /* Header used to identify the shared data */
-    section[role=main] header {
-        -ms-grid-column: 2;
-        -ms-grid-columns: auto 20px 1fr;
-        -ms-grid-row: 1;
-        -ms-grid-rows: 1fr;
-        display: -ms-grid;
-    }
+#rootGrid {
+	-ms-grid-column: 1;
+	-ms-grid-row: 1;
+	
+	display: -ms-grid; 
+	-ms-grid-columns: 1fr;
+	-ms-grid-rows: 100px 1fr 100px;
 
-        section[role=main] header .shared-thumbnail {
-            margin-top: 20px;
-            max-height: 160px;
-            max-width: 240px;
-        }
+	margin-left: 25px;
+}
 
-        section[role=main] header .shared-metadata {
-            -ms-grid-column: 3;
-            margin-top: 10px;
-            height: 180px;
-            overflow: hidden;
-        }
+#header {
+	-ms-grid-column: 1;
+	-ms-grid-row: 1;
+	margin-top: 25px;
+}
 
-            section[role=main] header .shared-metadata .shared-description {
-                margin-top: 15px;
-            }
+#content {
+	
+	-ms-grid-column: 1;
+	-ms-grid-row: 2;
+	
+	display: -ms-grid;
+	-ms-grid-columns: 1fr;
+	-ms-grid-rows: 1fr .5fr 1.5fr;
+	
+}
 
-    section[role=main] .commentbox {
-        -ms-grid-column-align: stretch;
-        -ms-grid-column: 2;
-        -ms-grid-row: 2;
-        height: 25px;
-        margin-top: 0px;
-        width: calc(100% - 4px);
-    }
+#contentValue {
+	-ms-grid-row: 1;
+}
 
-    /* Controls used to share data and show progress */
-    section[role=main] .sharecontrols {
-        -ms-grid-column: 2;
-        -ms-grid-column-align: stretch;
-        -ms-grid-columns: 1fr auto;
-        -ms-grid-row: 3;
-        -ms-grid-rows: 1fr;
-        display: -ms-grid;
-        margin-top: 20px;
-    }
+#submitArticle {
+	-ms-grid-row: 2;
+}
 
-        section[role=main] .sharecontrols .submitbutton {
-            -ms-grid-column: 2;
-            margin: 0;
-        }
+#quickLinkArea {
+	-ms-grid-row: 3;
+}
+	
+#footer {
+	-ms-grid-row: 3;
+	margin-top: 25px;
+}
 
-        section[role=main] .sharecontrols .progressindicators {
-            visibility: hidden;
-        }
+#submitProgress {
+    visibility: hidden;
+}
 
-            section[role=main] .sharecontrols .progressindicators progress {
-                display: inline;
-                height: 20px;
-                margin-right: 2px;
-                width: 20px;
-            }
+#quickLinkIcon {
+    width:75px;
+    height:75px;
+    position:relative;
+    top:-120px;
+    float: left;
+}
 
-                section[role=main] .sharecontrols .progressindicators progress::-ms-fill {
-                    animation-name: -ms-ring;
-                }
+#quickLinkId, #quickLinkName, #quickLinkWebsite, #quickLinkTwitter {
+    width:340px;
+    height:32px;
+    position:relative;
+    margin-left:5px;
+    float: left;
+}
+
+.labelTextQL { 
+width:100px;
+height:32px;
+margin-left:100px;
+float: left;
+padding-top:12px;
+
+} 

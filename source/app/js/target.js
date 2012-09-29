@@ -1,5 +1,8 @@
-﻿
+﻿// For an introduction to the Share Contract template, see the following documentation:
+// http://go.microsoft.com/fwlink/?LinkId=232513
+
 (function () {
+    "use strict";
 
     // Variable to store the ShareOperation object
     var shareOperation = null;
@@ -37,7 +40,7 @@
         }
         document.getElementById("contentValue").appendChild(document.createElement("br"));
 
-        
+
 
     }
 
@@ -79,7 +82,7 @@
                 document.getElementById("submitUrl").textContent = sharedUri;
             });
         }
-        
+
         if (shareOperation.data.contains(Windows.ApplicationModel.DataTransfer.StandardDataFormats.html)) {
             shareOperation.data.getHtmlFormatAsync().done(function (htmlFormat) {
                 document.getElementById("htmlContentArea").className = "unhidden";
@@ -133,7 +136,7 @@
             UserWebSite: userUrlInputBox.value,
             Twitter: userTwitterInputBox.value
         };
-        
+
         WinJS.xhr({
             type: "POST",
             url: "http://metro-weekly.com/api/submission",
