@@ -25,16 +25,18 @@
 
     <!-- This template is used to display each item in the ListView declared below. -->
     <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
-        <div class="item">
+        <div class="item" style="border-left: solid 2px #57a6e3;">
             
-            <img class="item-image" src="#" data-win-bind="src: backgroundImage; alt: title" />
+            
 
             <!--<div class="item-image">ASDFASFDASDFAF</div>-->
 
-            <div class="item-overlay">
-                <h4 class="item-title" data-win-bind="textContent: ArticleUrl"></h4>
-                <h6 class="item-subtitle win-type-ellipsis" data-win-bind="textContent: Twitter"></h6>
+            <div class="item-overlay" >
+                <img class="item-image" src="https://api.twitter.com/1/users/profile_image?screen_name=microsoft&size=bigger" style="margin-top: 0px; margin-right: 156px; margin-bottom: 0px;"/>
+				<h4 class="item-title" data-win-bind="textContent: Twitter"></h4>
+                <h6 class="item-subtitle win-type-ellipsis" data-win-bind="textContent: ArticleUrl"></h6>
             </div>
+        	<h4 class="item-headertitle" data-win-bind="textContent:Description" style="margin-left: 1px; margin-right: 1px; -ms-grid-row-span: 2;"></h4>
         </div>
     </div>
 
@@ -62,7 +64,7 @@
             <!-- <div class="itemslist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none' }"></div> -->
         </section>
     </div>
-
+    
         <!-- Create AppBar -->
     <!-- BEGINTEMPLATE: Template code for an AppBar -->
     <div id="createAppBar" data-win-control="WinJS.UI.AppBar" data-win-options="">
@@ -77,5 +79,6 @@
         </button>
     </div>
     <!-- ENDTEMPLATE -->
+
 </body>
 </html>
