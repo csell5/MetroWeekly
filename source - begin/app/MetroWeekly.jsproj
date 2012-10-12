@@ -86,9 +86,6 @@
     <Content Include="pages\split\split.html" />
     <Content Include="pages\split\split.js" />
     <Content Include="default.html" />
-    <Content Include="pages\uS2\userSettings.css" />
-    <Content Include="pages\uS2\userSettings.html" />
-    <Content Include="pages\uS2\userSettings.js" />
     <Content Include="pages\userSettings\userSettings.css" />
     <Content Include="pages\userSettings\userSettings.html" />
     <Content Include="pages\userSettings\userSettings.js" />
