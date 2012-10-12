@@ -8,6 +8,8 @@
         var articles = JSON.parse(result.response);
         
         articles.forEach(function (i) {
+            i.twitterImage = "https://api.twitter.com/1/users/profile_image?screen_name=" + i.Twitter;
+
             articleList.push(i); 
         })
 
