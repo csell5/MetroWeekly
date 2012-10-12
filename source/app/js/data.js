@@ -13,6 +13,8 @@
             if (i.UserName != null) {
                 i.FirstName = i.Name.split(' ')[0];
                 i.LastName = i.Name.split(' ')[1];
+                var itemDate = moment(i.SubmittedDate).valueOf();
+                i.ArticleDate = moment(itemDate).format("LL");
                 articleList.push(i);
             }
 
