@@ -49,6 +49,21 @@
 					width: 230px;
 					padding-left:10px;
 				}
+			.itemspage .itemslist .item .item-overlay .item-titleFirstName {
+                -ms-grid-row: 1;
+                overflow: hidden;
+                width: 160px;
+                padding-left:60px;
+				color:#FFF;
+            }
+			.itemspage .itemslist .item .item-overlay .item-titleLastName {
+                -ms-grid-row: 1;
+                overflow: hidden;
+                width: 160px;
+                padding-left:60px;
+				padding-top:24px;
+				color:#FFF;
+            }
             .itemspage .itemslist .item .item-overlay .item-title {
                 -ms-grid-row: 1;
                 overflow: hidden;

@@ -9,8 +9,14 @@
         
         articles.forEach(function (i) {
             i.twitterImage = "https://api.twitter.com/1/users/profile_image?screen_name=" + i.Twitter;
+            i.Name = i.UserName;
+            if (i.UserName != null) {
+                i.FirstName = i.Name.split(' ')[0];
+                i.LastName = i.Name.split(' ')[1];
+                articleList.push(i);
+            }
 
-            articleList.push(i); 
+        
         })
 
 
