@@ -11,8 +11,10 @@
             i.twitterImage = "https://api.twitter.com/1/users/profile_image?screen_name=" + i.Twitter;
             i.Name = i.UserName;
             if (i.UserName != null) {
-                i.FirstName = i.Name.split(' ')[0];
-                i.LastName = i.Name.split(' ')[1];
+                if(i.Name.split(' ').length>0)
+                    i.FirstName = i.Name.split(' ')[0];
+                if (i.Name.split(' ').length > 1)
+                    i.LastName = i.Name.split(' ')[1];
                 var itemDate = moment(i.SubmittedDate).valueOf();
                 i.ArticleDate = moment(itemDate).format("LL");
                 articleList.push(i);
