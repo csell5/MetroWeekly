@@ -71,6 +71,7 @@
     <Content Include="images\widelogo.png" />
     <Content Include="js\data.js" />
     <Content Include="js\default.js" />
+    <Content Include="js\knockout-2.1.0.js" />
     <Content Include="js\moment.min.js" />
     <Content Include="js\navigator.js" />
     <Content Include="js\target.js" />
@@ -79,9 +80,15 @@
     <Content Include="pages\about\about.css" />
     <Content Include="pages\about\about.html" />
     <Content Include="pages\about\about.js" />
-    <Content Include="pages\items\items.css" />
-    <Content Include="pages\items\items.html" />
-    <Content Include="pages\items\items.js" />
+    <Content Include="pages\groupDetail\groupDetail.css" />
+    <Content Include="pages\groupDetail\groupDetail.html" />
+    <Content Include="pages\groupDetail\groupDetail.js" />
+    <Content Include="pages\itemDetail\itemDetail.css" />
+    <Content Include="pages\itemDetail\itemDetail.html" />
+    <Content Include="pages\itemDetail\itemDetail.js" />
+    <Content Include="pages\hub\hub.css" />
+    <Content Include="pages\hub\hub.html" />
+    <Content Include="pages\hub\hub.js" />
     <Content Include="pages\split\split.css" />
     <Content Include="pages\split\split.html" />
     <Content Include="pages\split\split.js" />
@@ -90,7 +97,6 @@
     <Content Include="pages\userSettings\userSettings.html" />
     <Content Include="pages\userSettings\userSettings.js" />
     <Content Include="target.html" />
-    <None Include="Metro-Weekly-App_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />

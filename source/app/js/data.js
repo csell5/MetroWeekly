@@ -3,7 +3,6 @@
 
     var articleList = new WinJS.Binding.List();
 
-    
     WinJS.xhr({ url: "http://metro-weekly.com/article/getapproved" }).then(function (result) {
         var articles = JSON.parse(result.response);
         
@@ -17,11 +16,8 @@
                 i.ArticleDate = moment(itemDate).format("LL");
                 articleList.push(i);
             }
-
-        
         })
-
-
+    
         var groupCount = {};
         var maxItems = 6;
 

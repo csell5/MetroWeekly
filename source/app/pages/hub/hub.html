@@ -10,9 +10,10 @@
     <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
 
     <link href="/css/default.css" rel="stylesheet" />
-    <link href="/pages/items/items.css" rel="stylesheet" />
+    <link href="/pages/hub/hub.css" rel="stylesheet" />
+    
     <script src="/js/data.js"></script>
-    <script src="/pages/items/items.js"></script>
+    <script src="/pages/hub/hub.js"></script>
 </head>
 <body>
 
@@ -35,7 +36,8 @@
                 <h4 class="item-titleLastName" data-win-bind="textContent: LastName"></h4>
                 <h6 class="item-subtitle win-type-ellipsis" data-win-bind="textContent: ArticleDate"></h6>
             </div>
-        	<h4 class="item-headertitle" data-win-bind="textContent: title" style="margin-left: 1px; margin-right: 1px; -ms-grid-row-span: 2;"></h4>
+        	<h4 class="item-headertitle" data-win-bind="textContent: ArticleTitle" style="margin-left: 1px; margin-right: 1px; -ms-grid-row-span: 2;"></h4>
+            <p id="scott"></p>
         </div>
     </div>
 
@@ -63,6 +65,8 @@
             <!-- <div class="itemslist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none' }"></div> -->
         </section>
     </div>
+
+    
     
         <!-- Create AppBar -->
     <!-- BEGINTEMPLATE: Template code for an AppBar -->

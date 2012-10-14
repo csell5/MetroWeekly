@@ -1,0 +1,74 @@
+﻿.itemdetailpage {
+    display: -ms-grid;    
+    -ms-grid-rows: 120px 20px 1fr;
+    -ms-grid-columns: 120px 300px 1fr 120px;
+}
+
+.itemdetailpage header[role=banner] {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 3;
+}
+
+.contentLeft {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    
+}
+
+.contentRight {
+	
+	display: -ms-grid;
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+	-ms-grid-column-span: 2;
+	
+}
+
+.contentRight iframe {
+	width: 900px;
+	height: 700px;
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .itemdetailpage .content {
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+        .itemdetailpage .content article {
+            /* Define a single column, vertically scrolling article in snapped mode. */
+            -ms-grid-columns: 300px 1fr;
+            -ms-grid-row: 2;
+            -ms-grid-rows: auto 60px;
+            display: -ms-grid;
+            height: 100%;
+            margin-left: 20px;
+            margin-top: 6px;
+            width: 300px;
+        }
+
+            .itemdetailpage .content article header .item-title {
+                margin-bottom: 10px;
+            }
+
+            .itemdetailpage .content article .item-image {
+                height: 140px;
+                width: 280px;
+            }
+
+            .itemdetailpage .content article .item-content {
+                padding-bottom: 60px;
+            }
+}
+
+/*
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .itemdetailpage .content article {
+        margin-left: 100px;
+    }
+}
+
+*/
