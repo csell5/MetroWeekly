@@ -25,8 +25,19 @@
         display: -ms-grid;
         height: 180px;
         width: 250px;
-        border:1px solid #ccc; 
+        border:1px solid #ccc;
+        background:url(/images/slant1.png);
+        border-left: solid 2px #f00;
     }
+
+    blue{
+        border-left: solid 2px #57a6e3;
+    }
+
+    red{
+        border-left: solid 2px #f00;
+    }
+
 
         .itemspage .itemslist .item .item-image {
             -ms-grid-row-span: 2;
@@ -40,14 +51,17 @@
             -ms-grid-rows: 1fr 21px;
             display: -ms-grid;
             padding: 6px 15px 2px 15px;
-            
+            background:#57a6e3;
         }
+
+
 
 			.itemspage .itemslist .item .item-headertitle {
 					-ms-grid-row: 1;
 					overflow: hidden;
 					width: 230px;
 					padding-left:10px;
+                    font-size:1.5em;
 				}
 			.itemspage .itemslist .item .item-overlay .item-titleFirstName {
                 -ms-grid-row: 1;

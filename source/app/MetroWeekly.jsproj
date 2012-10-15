@@ -64,6 +64,7 @@
     <Content Include="images\metroweeklylogo.png" />
     <Content Include="images\secondary_square.png" />
     <Content Include="images\secondary_wide.png" />
+    <Content Include="images\slant1.png" />
     <Content Include="images\smalllogo.png" />
     <Content Include="images\splashscreen.png" />
     <Content Include="images\storelogo.png" />

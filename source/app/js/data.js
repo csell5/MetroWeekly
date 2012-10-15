@@ -14,10 +14,32 @@
                     i.FirstName = i.Name.split(' ')[0];
                 if (i.Name.split(' ').length > 1)
                     i.LastName = i.Name.split(' ')[1];
-                var itemDate = moment(i.SubmittedDate).valueOf();
-                i.ArticleDate = moment(itemDate).format("LL");
-                articleList.push(i);
             }
+            var category = i.Category;
+            switch(category)
+            {
+                case "app of the week":
+                    i.ColorCode = "Red";
+                    break;
+                case "on the surface":
+                    i.ColorCode = "Blue";
+                    break;
+                case "reading material":
+                    i.ColorCode = "Green";
+                    break;
+                case "app of the week":
+                    i.ColorCode = "Yellow";
+                    break;
+                case "sample\package of the week":
+                    i.ColorCode = "Orange";
+                    break;
+                default:
+                    i.ColorCode = "Gray";
+            }
+            var itemDate = moment(i.SubmittedDate).valueOf();
+            i.ArticleDate = moment(itemDate).format("LL");
+
+            articleList.push(i);
         })
     
         var groupCount = {};
