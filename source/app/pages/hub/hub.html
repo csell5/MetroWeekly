@@ -19,19 +19,18 @@
 </head>
 <body>
 
-    <div id="headerTemplate" data-win-control="WinJS.Binding.Template" 
-        style="display: none">
+    <div id="headerTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
         <div class="simpleHeaderItem">
             <h1 data-win-bind="innerText: title"></h1>
         </div>
     </div>
 
     <!-- This template is used to display each item in the ListView declared below. -->
-    <div class="itemtemplate " data-win-control="WinJS.Binding.Template">
+    <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
         <div class="item">
             <!--<div class="item-image">ASDFASFDASDFAF</div>-->
 
-            <div class="item-overlay" data-win-bind="className: Category">
+            <div class="item-overlay" data-win-bind="className: Category" >
                 <img class="item-image" data-win-bind="src: twitterImage"  style="margin-top: 0px; margin-right: 156px; margin-bottom: 0px;"/>
 				<h4 class="item-titleFirstName" data-win-bind="textContent: FirstName"></h4>
                 <h4 class="item-titleLastName" data-win-bind="textContent: LastName"></h4>

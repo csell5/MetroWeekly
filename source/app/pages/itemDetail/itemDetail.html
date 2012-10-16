@@ -26,25 +26,29 @@
             </h1>
         </header>
       
-		<section class="contentLeft">
-            <div>Submitted: <span data-bind="text: ArticleDate"></span></div>
-            <div>by: <span data-bind="text: UserName"></span></div>
-            <div><a data-bind="attr: { href: twitterUrl }, text: Twitter"></a></div>
+		<article class="contentLeft">
+            <header>
+                <div>Submitted: <span data-bind="text: ArticleDate"></span></div>
+                <div>by: <span data-bind="text: UserName"></span></div>
+                <div><a data-bind="attr: { href: twitterUrl }, text: Twitter"></a></div>    
+            </header>
             
-            <br />
-            <div data-bind="text: ArticleDescription"></div>
-           
+           <section role="metaData">
+               <div data-bind="text: ArticleDescription"></div>
+           </section>
             
-            <br />
-            <div>
-                Original Article
-                <a data-bind="attr: { href: ArticleUrl }, text: ArticleUrl" ></a>
-            </div>
+            <footer>
+                <div>
+                    Original Article
+                    <a data-bind="attr: { href: ArticleUrl }, text: ArticleUrl" ></a>
+                </div>
+            </footer>
             
-        </section>
-		<section class="contentRight">
+        </article>
+
+		<article class="contentRight">
 			<iframe data-bind="attr: { src: ArticleUrl }"></iframe>   
-        </section>
+        </article>
     </div>
 </body>
 </html>
