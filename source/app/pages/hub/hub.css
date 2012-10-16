@@ -26,12 +26,34 @@
         height: 180px;
         width: 250px;
         border:1px solid #ccc;
-        background:url(/images/slant1.png);
-        
+        background:url(/images/slantBlue.png);
+    }
+	
+    .lightGreen{
+        border-left: solid thick #009100;
+	    /*background: #009100;*/
+    }
+    .lightBlue{
+        border-left: solid thick #2b82ef;
+	    /*background: #2b82ef;*/
+    }
+    .lightRose{
+        border-left: solid thick #af1a3f;
+	    /*background: #af1a3f;*/
+    }
+    .lightOrange{
+        border-left: solid thick #d14725;
+	    /*background: #d14725;*/
+    }
+    .lightGold{
+        border-left: solid thick #ffd700;
+	    /*background: #ffd700;*/
+    }
+    .lightGray{
+        border-left: solid thick #474747;
+	    /*background: #474747;*/
     }
     
-
-
         .itemspage .itemslist .item .item-image {
             -ms-grid-row-span: 2;
             width:60px;
@@ -46,31 +68,7 @@
             padding: 6px 15px 2px 15px;
         }
 
-        .lightGreen{
-        border-left: solid 2px #009100;
-		background: #009100;
-        }
-        .lightBlue{
-            border-left: solid 2px #2b82ef;
-		    background: #2b82ef;
-        }
-        .lightRose{
-            border-left: solid 2px #af1a3f;
-		    background: #af1a3f;
-        }
-	    .lightOrange{
-            border-left: solid 2px #d14725;
-		    background: #d14725;
-        }
-	    .lightGold{
-            border-left: solid 2px #ffd700;
-		    background: #ffd700;
-        }
-	    .lightGray{
-            border-left: solid 2px #474747;
-		    background: #474747;
-        }
-
+        
 			.itemspage .itemslist .item .item-headertitle {
 					-ms-grid-row: 1;
 					overflow: hidden;
@@ -107,9 +105,9 @@
             }
 
 @media screen and (-ms-view-state: fullscreen-landscape), screen and (-ms-view-state: fullscreen-portrait), screen and (-ms-view-state: filled) {
-    /*.itemspage .itemslist .item .item-overlay {
+    .itemspage .itemslist .item .item-overlay {
         background: rgba(0,0,0,0.5);
-    }*/
+    }
 	
 
         .itemspage .itemslist .item .item-overlay .item-title {
