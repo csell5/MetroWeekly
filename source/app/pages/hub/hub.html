@@ -27,12 +27,11 @@
     </div>
 
     <!-- This template is used to display each item in the ListView declared below. -->
-    <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
-        <div class="item blue">
-
+    <div class="itemtemplate " data-win-control="WinJS.Binding.Template">
+        <div class="item">
             <!--<div class="item-image">ASDFASFDASDFAF</div>-->
 
-            <div class="item-overlay" >
+            <div class="item-overlay" data-win-bind="className: Category">
                 <img class="item-image" data-win-bind="src: twitterImage"  style="margin-top: 0px; margin-right: 156px; margin-bottom: 0px;"/>
 				<h4 class="item-titleFirstName" data-win-bind="textContent: FirstName"></h4>
                 <h4 class="item-titleLastName" data-win-bind="textContent: LastName"></h4>
@@ -52,8 +51,7 @@
         </header>
         <section aria-label="Main content" role="main">
             
-                <div  
-                    class="blueTop itemslist win-selectionstylefilled"
+                <div class="blueTop itemslist win-selectionstylefilled"
                     id="groupedListView"
                         data-win-control="WinJS.UI.ListView" 
                         data-win-options="{itemTemplate: select('#itemtemplate'),

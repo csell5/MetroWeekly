@@ -19,7 +19,7 @@
     z-index: 0;
 }
 
-    .itemspage .itemslist .item {
+    .itemspage .itemslist .item{
         -ms-grid-columns: 1fr;
         -ms-grid-rows: 1fr 72px;
         display: -ms-grid;
@@ -27,16 +27,9 @@
         width: 250px;
         border:1px solid #ccc;
         background:url(/images/slant1.png);
-        border-left: solid 2px #f00;
+        
     }
-
-    blue{
-        border-left: solid 2px #57a6e3;
-    }
-
-    red{
-        border-left: solid 2px #f00;
-    }
+    
 
 
         .itemspage .itemslist .item .item-image {
@@ -51,10 +44,32 @@
             -ms-grid-rows: 1fr 21px;
             display: -ms-grid;
             padding: 6px 15px 2px 15px;
-            background:#57a6e3;
         }
 
-
+        .lightGreen{
+        border-left: solid 2px #009100;
+		background: #009100;
+        }
+        .lightBlue{
+            border-left: solid 2px #2b82ef;
+		    background: #2b82ef;
+        }
+        .lightRose{
+            border-left: solid 2px #af1a3f;
+		    background: #af1a3f;
+        }
+	    .lightOrange{
+            border-left: solid 2px #d14725;
+		    background: #d14725;
+        }
+	    .lightGold{
+            border-left: solid 2px #ffd700;
+		    background: #ffd700;
+        }
+	    .lightGray{
+            border-left: solid 2px #474747;
+		    background: #474747;
+        }
 
 			.itemspage .itemslist .item .item-headertitle {
 					-ms-grid-row: 1;
@@ -92,9 +107,10 @@
             }
 
 @media screen and (-ms-view-state: fullscreen-landscape), screen and (-ms-view-state: fullscreen-portrait), screen and (-ms-view-state: filled) {
-    .itemspage .itemslist .item .item-overlay {
-        background: rgba(0,0,0,0.65);
-    }
+    /*.itemspage .itemslist .item .item-overlay {
+        background: rgba(0,0,0,0.5);
+    }*/
+	
 
         .itemspage .itemslist .item .item-overlay .item-title {
             color: rgba(255,255,255,0.87);

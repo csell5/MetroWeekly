@@ -4,6 +4,9 @@
     var appViewState = Windows.UI.ViewManagement.ApplicationViewState;
     var ui = WinJS.UI;
 
+
+
+
     ui.Pages.define("/pages/hub/hub.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
@@ -14,10 +17,11 @@
             listView.groupDataSource = Data.groupedItemsList.groups.dataSource;
             listView.itemTemplate = element.querySelector(".itemtemplate");
             listView.oniteminvoked = this._itemInvoked.bind(this);
-            
+
 
             this._initializeLayout(listView, Windows.UI.ViewManagement.ApplicationView.value);
             listView.element.focus();
+            
 
             var pinButton = document.getElementById("cmdPin");
             pinButton.addEventListener("click", pinByElementAsync, false);

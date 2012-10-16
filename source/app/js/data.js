@@ -15,29 +15,30 @@
                 if (i.Name.split(' ').length > 1)
                     i.LastName = i.Name.split(' ')[1];
             }
-            var category = i.Category;
-            switch(category)
-            {
-                case "app of the week":
-                    i.ColorCode = "Red";
-                    break;
-                case "on the surface":
-                    i.ColorCode = "Blue";
-                    break;
-                case "reading material":
-                    i.ColorCode = "Green";
-                    break;
-                case "app of the week":
-                    i.ColorCode = "Yellow";
-                    break;
-                case "sample\package of the week":
-                    i.ColorCode = "Orange";
-                    break;
-                default:
-                    i.ColorCode = "Gray";
-            }
+            
             var itemDate = moment(i.SubmittedDate).valueOf();
             i.ArticleDate = moment(itemDate).format("LL");
+
+            var Category = i.Category;
+            switch (Category) {
+                case "app of the week":
+                    i.Category = "item-overlay lightGreen";
+                    break;
+                case "on the surface":
+                    i.Category = "item-overlay lightRose";
+                    break;
+                case "reading material":
+                    i.Category = "item-overlay lightBlue";
+                    break;
+                case "app of the week":
+                    i.Category = "item-overlay lightOrange";
+                    //break;
+                case "sample\package of the week":
+                    i.Category = "item-overlay lightGold";
+                    break;
+                default:
+                    i.Category = "item-overlay lightGray";
+            }
 
             articleList.push(i);
         })
