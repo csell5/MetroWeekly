@@ -10,11 +10,13 @@
             //element.querySelector(".content").focus();
 
             ko.applyBindings(item);
+
+            document.getElementById("articleIFrame").onload = function () {
+                var pbar = document.getElementById("pbar");
+                pbar.value = 0;
+            };
+
         }
     });
-
-    function checkStatus() {
-       document.getElementById("pbar").value = 0;
-    }
 
 })();

@@ -24,6 +24,7 @@
 	text-align: center;
 }
     #pbar {
+        background-color: inherit;
         color: #57a6e3;
         transform: scalex(6);
 
