@@ -27,16 +27,14 @@
         </header>
       
 		<section class="contentLeft">
-            <div>Submitted: <span data-bind="text: SubmittedDate"></span></div>
-           
-             <div data-bind="text: ArticleDescription"></div>
-           
+            <div>Submitted: <span data-bind="text: ArticleDate"></span></div>
+            <div>by: <span data-bind="text: UserName"></span></div>
+            <div><a data-bind="attr: { href: twitterUrl }, text: Twitter"></a></div>
             
             <br />
-            <div>Submitted By:</div>
-            <div data-bind="text: UserName"></div>
-            <div data-bind="text: Twitter"></div>
-
+            <div data-bind="text: ArticleDescription"></div>
+           
+            
             <br />
             <div>
                 Original Article

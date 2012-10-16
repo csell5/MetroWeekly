@@ -8,6 +8,8 @@
         
         articles.forEach(function (i) {
             i.twitterImage = "https://api.twitter.com/1/users/profile_image?screen_name=" + i.Twitter;
+            i.twitterUrl = "https://twitter.com/" + i.Twitter;
+
             i.Name = i.UserName;
             if (i.UserName != null) {
                 if(i.Name.split(' ').length>0)
@@ -17,7 +19,7 @@
             }
             
             var itemDate = moment(i.SubmittedDate).valueOf();
-            i.ArticleDate = moment(itemDate).format("LL");
+            i.ArticleDate = moment(itemDate).format("MMM DD YYYY");
 
             var Category = i.Category;
             switch (Category) {
