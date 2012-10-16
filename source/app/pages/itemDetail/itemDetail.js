@@ -12,4 +12,9 @@
             ko.applyBindings(item);
         }
     });
+
+    function checkStatus() {
+       document.getElementById("pbar").value = 0;
+    }
+
 })();
