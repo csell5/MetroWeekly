@@ -25,6 +25,7 @@
             <DataFormat>uri</DataFormat>
           </ShareTarget>
         </Extension>
+        <Extension Category="windows.search" StartPage="pages/search/search.html" />
       </Extensions>
     </Application>
   </Applications>
