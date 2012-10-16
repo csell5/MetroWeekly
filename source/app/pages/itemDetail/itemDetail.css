@@ -16,6 +16,16 @@
 	-ms-grid-column-span: 3;
 }
 
+#pbar {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+
+	text-align: center;
+    transform: scalex(6);
+
+}
+
 .contentLeft {
     -ms-grid-row: 3;
     -ms-grid-column: 2;
