@@ -2,19 +2,23 @@
 // http://go.microsoft.com/fwlink/?LinkId=232511
 (function () {
     "use strict";
-
+    //D24
     var appdata = Windows.Storage.ApplicationData;
-
+    
 
     WinJS.UI.Pages.define("/pages/userSettings/userSettings.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-            
-            //var appdata = Windows.Storage.ApplicationData; after strict
+            // TODO: Initialize the page here.
 
-            //retreive data
+            /*
+                        TODO We should think about moving this object out into a real js object that we can use and initalize across all. 
+                        for now I am just going to copy some of it and revisit.  
+                        --@CSELL5
+                    */
 
+            //retreive data 26
             var userName = appdata.current.roamingSettings.values["userName"];
             if (userName) {
                 var userNameInputBox = document.getElementById("userName");
@@ -31,7 +35,7 @@
                 userTwitterInputBox.innerText = userTwitter;
             }
 
-            //save data
+            //save data D25
             var userNameInputBox = document.getElementById("userName");
             userNameInputBox.addEventListener("change", function (e) {
                 appdata.current.roamingSettings.values["userName"] = userNameInputBox.value;

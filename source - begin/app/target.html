@@ -15,11 +15,17 @@
 </head>
 
 <body role="application">
-    <!-- The content that will be loaded and displayed. -->
     <div id="rootGrid">
         <div id="header" role="contentinfo" data-win-control="WinJS.UI.HtmlControl" data-win-options="{uri: '/html/header.html'}"></div>
-
+       
 	    <div id="content">
+            <!--
+            <strong>Title: </strong><span id="title">(No title)</span>
+            <br />
+            <strong>Description: </strong><span id="description">(No description)</span>
+            <br />
+            <div id="thumbnailArea" class="hidden"><strong>Thumbnail: </strong><br /><img class="thumbnail" alt="(Thumbnail)" id="thumbnailImage" /><br /></div>
+            -->
             <div id="contentValue" >
                 <div id="htmlContentArea" class="hidden"><!--<strong>HTML: </strong><br />--><iframe id="htmlContent" style="width:600px; height:auto; display:none" ></iframe></div>
                 <p id="submitUrl"></p>
@@ -28,7 +34,7 @@
             <div id="submitArticle">
                 <span>Submit to Metro Weekly:</span>
                 <button id="submitArticleBtn">Submit Article</button>
-
+                
                 <label id="submitProgress">
                     <progress class="win-ring withText"></progress>Processing</label>
                 <p>
@@ -50,7 +56,7 @@
             </div>
 
         </div>
-
+          
         <div id="footer" data-win-control="WinJS.UI.HtmlControl" data-win-options="{uri: '/html/footer.html'}"></div>
     </div>
 </body>

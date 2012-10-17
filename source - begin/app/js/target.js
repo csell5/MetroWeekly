@@ -40,7 +40,7 @@
         }
         document.getElementById("contentValue").appendChild(document.createElement("br"));
 
-        
+
 
     }
 
@@ -82,7 +82,7 @@
                 document.getElementById("submitUrl").textContent = sharedUri;
             });
         }
-        
+
         if (shareOperation.data.contains(Windows.ApplicationModel.DataTransfer.StandardDataFormats.html)) {
             shareOperation.data.getHtmlFormatAsync().done(function (htmlFormat) {
                 document.getElementById("htmlContentArea").className = "unhidden";
@@ -136,7 +136,7 @@
             UserWebSite: userUrlInputBox.value,
             Twitter: userTwitterInputBox.value
         };
-        
+
         WinJS.xhr({
             type: "POST",
             url: "http://metro-weekly.com/api/submission",

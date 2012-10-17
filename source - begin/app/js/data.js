@@ -3,15 +3,48 @@
 
     var articleList = new WinJS.Binding.List();
 
-    
     WinJS.xhr({ url: "http://metro-weekly.com/article/getapproved" }).then(function (result) {
         var articles = JSON.parse(result.response);
         
         articles.forEach(function (i) {
-            articleList.push(i); 
+            i.twitterImage = "https://api.twitter.com/1/users/profile_image?screen_name=" + i.Twitter;
+            i.twitterUrl = "https://twitter.com/" + i.Twitter;
+
+            i.Name = i.UserName;
+            if (i.UserName != null) {
+                if(i.Name.split(' ').length>0)
+                    i.FirstName = i.Name.split(' ')[0];
+                if (i.Name.split(' ').length > 1)
+                    i.LastName = i.Name.split(' ')[1];
+            }
+            
+            var itemDate = moment(i.SubmittedDate).valueOf();
+            i.ArticleDate = moment(itemDate).format("MMM DD YYYY");
+
+            var Category = i.Category;
+            switch (Category) {
+                case "app of the week":
+                    i.Category = "item-overlay lightGreen";
+                    break;
+                case "on the surface":
+                    i.Category = "item-overlay lightRose";
+                    break;
+                case "reading material":
+                    i.Category = "item-overlay lightBlue";
+                    break;
+                case "app of the week":
+                    i.Category = "item-overlay lightOrange";
+                    //break;
+                case "sample\package of the week":
+                    i.Category = "item-overlay lightGold";
+                    break;
+                default:
+                    i.Category = "item-overlay lightGray";
+            }
+
+            articleList.push(i);
         })
-
-
+    
         var groupCount = {};
         var maxItems = 6;
 

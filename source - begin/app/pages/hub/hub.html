@@ -10,14 +10,16 @@
     <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
 
     <link href="/css/default.css" rel="stylesheet" />
-    <link href="/pages/items/items.css" rel="stylesheet" />
+    <link href="/pages/hub/hub.css" rel="stylesheet" />
+    
+    <script src="/js/moment.min.js"></script>
     <script src="/js/data.js"></script>
-    <script src="/pages/items/items.js"></script>
+
+    <script src="/pages/hub/hub.js"></script>
 </head>
 <body>
 
-    <div id="headerTemplate" data-win-control="WinJS.Binding.Template" 
-        style="display: none">
+    <div id="headerTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
         <div class="simpleHeaderItem">
             <h1 data-win-bind="innerText: title"></h1>
         </div>
@@ -25,18 +27,16 @@
 
     <!-- This template is used to display each item in the ListView declared below. -->
     <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
-        <div class="item" style="border-left: solid 2px #57a6e3;">
-            
-            
-
+        <div class="item">
             <!--<div class="item-image">ASDFASFDASDFAF</div>-->
 
-            <div class="item-overlay" >
-                <img class="item-image" src="https://api.twitter.com/1/users/profile_image?screen_name=microsoft&size=bigger" style="margin-top: 0px; margin-right: 156px; margin-bottom: 0px;"/>
-				<h4 class="item-title" data-win-bind="textContent: Twitter"></h4>
-                <h6 class="item-subtitle win-type-ellipsis" data-win-bind="textContent: ArticleUrl"></h6>
+            <div class="item-overlay" data-win-bind="className: Category" >
+                <img class="item-image" data-win-bind="src: twitterImage"  style="margin-top: 0px; margin-right: 156px; margin-bottom: 0px;"/>
+				<h4 class="item-titleFirstName" data-win-bind="textContent: FirstName"></h4>
+                <h4 class="item-titleLastName" data-win-bind="textContent: LastName"></h4>
+                <h6 class="item-subtitle win-type-ellipsis" data-win-bind="textContent: ArticleDate"></h6>
             </div>
-        	<h4 class="item-headertitle" data-win-bind="textContent:Description" style="margin-left: 1px; margin-right: 1px; -ms-grid-row-span: 2;"></h4>
+        	<h4 class="item-headertitle" data-win-bind="textContent: ArticleTitle" style="margin-left: 1px; margin-right: 1px; -ms-grid-row-span: 2;"></h4>
         </div>
     </div>
 
@@ -50,8 +50,7 @@
         </header>
         <section aria-label="Main content" role="main">
             
-                <div  
-                    class="blueTop itemslist win-selectionstylefilled"
+                <div class="blueTop itemslist win-selectionstylefilled"
                     id="groupedListView"
                         data-win-control="WinJS.UI.ListView" 
                         data-win-options="{itemTemplate: select('#itemtemplate'),
@@ -64,6 +63,8 @@
             <!-- <div class="itemslist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none' }"></div> -->
         </section>
     </div>
+
+    
     
         <!-- Create AppBar -->
     <!-- BEGINTEMPLATE: Template code for an AppBar -->

@@ -1,0 +1,113 @@
+﻿html, body {
+    margin: 0;
+    height:100%;
+	width:100%;
+}
+
+.itemdetailpage {
+    display: -ms-grid;    
+    -ms-grid-rows: 120px 5px 1fr;
+    -ms-grid-columns: 120px 300px 1fr;
+}
+
+.itemdetailpage header[role=banner] {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 3;
+}
+
+#pbContainer {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+
+	text-align: center;
+}
+    #pbar {
+        background-color: inherit;
+        color: #57a6e3;
+        transform: scalex(6);
+
+    }
+
+.contentLeft {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 120px 1fr 120px;
+}
+    .contentLeft header {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+		margin-top: 40px;
+    }
+
+    .contentLeft section[role=metaData] {
+        -ms-grid-column: 1;
+        -ms-grid-row: 2;
+    }
+
+    .contentLeft footer {
+        -ms-grid-column: 1;
+        -ms-grid-row: 3;
+    }
+
+.contentRight {
+	-ms-grid-row: 3;
+    -ms-grid-column: 3;
+	
+    width: 100%;
+    height: 100%;
+}
+
+.contentRight iframe {
+    transform: scale(0.90);
+	width: calc(100%);
+	height: calc(100%);
+	
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .itemdetailpage .content {
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+        .itemdetailpage .content article {
+            /* Define a single column, vertically scrolling article in snapped mode. */
+            -ms-grid-columns: 300px 1fr;
+            -ms-grid-row: 2;
+            -ms-grid-rows: auto 60px;
+            display: -ms-grid;
+            height: 100%;
+            margin-left: 20px;
+            margin-top: 6px;
+            width: 300px;
+        }
+
+            .itemdetailpage .content article header .item-title {
+                margin-bottom: 10px;
+            }
+
+            .itemdetailpage .content article .item-image {
+                height: 140px;
+                width: 280px;
+            }
+
+            .itemdetailpage .content article .item-content {
+                padding-bottom: 60px;
+            }
+}
+
+/*
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .itemdetailpage .content article {
+        margin-left: 100px;
+    }
+}
+
+*/

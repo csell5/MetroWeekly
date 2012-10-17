@@ -7,7 +7,7 @@
    to .win-surface. */
 .itemspage .itemslist .win-horizontal.win-viewport .win-surface {
     margin-bottom: 60px;
-    margin-left: 115px;
+    margin-left: 50px;
     margin-right: 115px;
     margin-top: 155px;
 }
@@ -19,15 +19,41 @@
     z-index: 0;
 }
 
-    .itemspage .itemslist .item {
+    .itemspage .itemslist .item{
         -ms-grid-columns: 1fr;
         -ms-grid-rows: 1fr 72px;
         display: -ms-grid;
         height: 180px;
         width: 250px;
-        border:1px solid #ccc; 
+        border:1px solid #ccc;
+        background:url(/images/slantBlue.png);
     }
-
+	
+    .lightGreen{
+        border-left: solid thick #009100;
+	    /*background: #009100;*/
+    }
+    .lightBlue{
+        border-left: solid thick #2b82ef;
+	    /*background: #2b82ef;*/
+    }
+    .lightRose{
+        border-left: solid thick #af1a3f;
+	    /*background: #af1a3f;*/
+    }
+    .lightOrange{
+        border-left: solid thick #d14725;
+	    /*background: #d14725;*/
+    }
+    .lightGold{
+        border-left: solid thick #ffd700;
+	    /*background: #ffd700;*/
+    }
+    .lightGray{
+        border-left: solid thick #474747;
+	    /*background: #474747;*/
+    }
+    
         .itemspage .itemslist .item .item-image {
             -ms-grid-row-span: 2;
             width:60px;
@@ -40,15 +66,31 @@
             -ms-grid-rows: 1fr 21px;
             display: -ms-grid;
             padding: 6px 15px 2px 15px;
-            
         }
 
+        
 			.itemspage .itemslist .item .item-headertitle {
 					-ms-grid-row: 1;
 					overflow: hidden;
 					width: 230px;
 					padding-left:10px;
+                    font-size:1.5em;
 				}
+			.itemspage .itemslist .item .item-overlay .item-titleFirstName {
+                -ms-grid-row: 1;
+                overflow: hidden;
+                width: 160px;
+                padding-left:60px;
+				color:#FFF;
+            }
+			.itemspage .itemslist .item .item-overlay .item-titleLastName {
+                -ms-grid-row: 1;
+                overflow: hidden;
+                width: 160px;
+                padding-left:60px;
+				padding-top:24px;
+				color:#FFF;
+            }
             .itemspage .itemslist .item .item-overlay .item-title {
                 -ms-grid-row: 1;
                 overflow: hidden;
@@ -63,8 +105,9 @@
             }
 
 @media screen and (-ms-view-state: fullscreen-landscape), screen and (-ms-view-state: fullscreen-portrait), screen and (-ms-view-state: filled) {
+
     .itemspage .itemslist .item .item-overlay {
-        background: rgba(0,0,0,0.65);
+        background: rgba(0,0,0,0.5);
     }
 
         .itemspage .itemslist .item .item-overlay .item-title {
