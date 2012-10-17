@@ -1,21 +1,26 @@
 ﻿(function () {
     "use strict";
 
+    var item;
+
     WinJS.UI.Pages.define("/pages/itemDetail/itemDetail.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
 
-            var item = Data.items.getAt(options.itemIndex);
-            //element.querySelector(".content").focus();
-
+            item = Data.items.getAt(options.itemIndex);
             ko.applyBindings(item);
 
+            //element.querySelector(".content").focus();
+            
             document.getElementById("articleIFrame").onload = function () {
                 var pbar = document.getElementById("pbar");
                 pbar.value = 0;
             };
 
+            var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
+            dataTransferManager.addEventListener("datarequested", dataRequestedForSharing);
+            
             var pinButton = document.getElementById("cmdPin");
             pinButton.addEventListener("click", pinByElementAsync, false);
 
@@ -45,5 +50,37 @@
 
         }
     });
+
+    function dataRequestedForSharing(e) {
+        var request = e.request;
+
+        // Title is required
+        var dataPackageTitle = item.ArticleTitle;
+
+        if ((typeof dataPackageTitle === "string") && (dataPackageTitle !== "")) {
+
+            var dataPackageLink = item.ArticleUrl;
+            if ((typeof dataPackageLink === "string") && (dataPackageLink !== "")) {
+                request.data.properties.title = dataPackageTitle;
+
+                // The description is optional.
+                var dataPackageDescription = item.ArticleDescription;
+                if ((typeof dataPackageDescription === "string") && (dataPackageDescription !== "")) {
+                    request.data.properties.description = dataPackageDescription;
+                }
+
+                try {
+                    request.data.setUri(new Windows.Foundation.Uri(dataPackageLink));
+                    WinJS.log && WinJS.log("", "sample", "error");
+                } catch (ex) {
+                    WinJS.log && WinJS.log("Exception occured: the uri provided " + dataPackageLink + " is not well formatted.", "sample", "error");
+                }
+            } else {
+                WinJS.log && WinJS.log("FAIL");
+            }
+        } else {
+            WinJS.log && WinJS.log("FAIL");
+        }
+    }
 
 })();
