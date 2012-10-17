@@ -30,6 +30,10 @@
                 var uriWideLogo = new Windows.Foundation.Uri("ms-appx:///images/secondary_wide.png");
                 var currentTime = new Date();
                 var TileActivationArguments = newTileID + " WasPinnedAt=" + currentTime;
+
+                var newTileDisplayName = item.ArticleTitle;
+                var newTileShortName = "Metro-Weekly: " + item.ArticleTitle;
+
                 var tile = new Windows.UI.StartScreen.SecondaryTile(newTileID, newTileShortName, newTileDisplayName, TileActivationArguments, Windows.UI.StartScreen.TileOptions.showNameOnLogo, uriLogo);
                 tile.foregroundText = Windows.UI.StartScreen.ForegroundText.dark;
                 tile.smallLogo = uriSmallLogo;
