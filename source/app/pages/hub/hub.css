@@ -105,13 +105,10 @@
             }
 
 @media screen and (-ms-view-state: fullscreen-landscape), screen and (-ms-view-state: fullscreen-portrait), screen and (-ms-view-state: filled) {
-<<<<<<< HEAD
-=======
+
     .itemspage .itemslist .item .item-overlay {
         background: rgba(0,0,0,0.5);
     }
-	
->>>>>>> a2f7563ab772cb30075d17a832753182270d0512
 
         .itemspage .itemslist .item .item-overlay .item-title {
             color: rgba(255,255,255,0.87);

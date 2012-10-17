@@ -16,18 +16,14 @@
     var wsc = Windows.Security.Cryptography;
     var popups = Windows.UI.Popups;
 
-    // v FLYOUT SETTING CONTROL D21 v
+    //D21-26
     app.onsettings = function (e) {
         e.detail.applicationcommands = {
             "about": {
                 href: "/pages/about/about.html",
                 title: "About"
-            },
-            "userSettings": {
-                href: "/pages/userSettings/userSettings.html",
-                title: "User Information"
             }
-
+            
         }
 
 
@@ -44,36 +40,10 @@
                 // Restore application state here.
             }
 
-            // v PUSH NOTIFICATIONS v D31
+            // Clear tiles and badges D31
+           
 
-            // Clear tiles and badges
-            notify.TileUpdateManager.createTileUpdaterForApplication().clear();
-            notify.BadgeUpdateManager.createBadgeUpdaterForApplication().clear();
-
-            // Register for push notifications
-            var profile = net.NetworkInformation.getInternetConnectionProfile();
-
-            if (profile.getNetworkConnectivityLevel() === net.NetworkConnectivityLevel.internetAccess) {
-                push.PushNotificationChannelManager.createPushNotificationChannelForApplicationAsync().then(function (channel) {
-
-                    //var buffer = wsc.CryptographicBuffer.convertStringToBinary(channel.uri, wsc.BinaryStringEncoding.utf8);
-                    //var uri = wsc.CryptographicBuffer.encodeToBase64String(buffer);
-
-                    var postData = { uri: channel.uri };
-
-                    WinJS.xhr({
-                        type: "POST",
-                        headers: { "Content-Type": "application/json; charset=utf-8" },
-                        url: "http://metro-weekly.com/api/PushNotifications",
-                        data: JSON.stringify(postData)
-                    }).then(function (xhr) {
-                        if (xhr.status < 200 || xhr.status >= 300) {
-                            var dialog = new popups.MessageDialog("Unable to open push notification channel");
-                            dialog.showAsync();
-                        }
-                    });
-                });
-            }
+            // Register for push notifications D32
 
 
             if (app.sessionState.history) {
